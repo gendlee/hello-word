@@ -1,0 +1,33 @@
+//H文件
+class Date
+{
+private:
+	...
+
+public:
+	...
+	void funca(Date*);
+};
+
+//funca()函数实现文件.cpp
+#include"Date.h"
+...
+void Date::funca(Date *p)
+{
+	p->print();
+	if(p->getleap())
+		cout<<p->setyear(2016)<<"年是闰年\n"<<endl;
+	else
+		cout<<p->setyear(2016)<<"年不是闰年\n"<<endl;
+}
+
+//主函数文件.cpp
+#include"Date.h"
+...
+void main()
+{
+	Date d;
+	d.set(2016,1,1);
+	d.funca(&d);
+	
+}
